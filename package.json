@@ -1,6 +1,6 @@
 {
   "name": "degroote-jquery-datetimepicker",
-  "version": "2.5.27",
+  "version": "2.5.28",
   "description": "jQuery Plugin DateTimePicker it is DatePicker and TimePicker in one",
   "main": "build/jquery.datetimepicker.full.min.js",
   "scripts": {
