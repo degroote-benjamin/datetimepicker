@@ -1,5 +1,5 @@
 {
-  "name": "jquery-datetimepicker",
+  "name": "degroote-jquery-datetimepicker",
   "version": "2.5.20",
   "description": "jQuery Plugin DateTimePicker it is DatePicker and TimePicker in one",
   "main": "build/jquery.datetimepicker.full.min.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xdan/datetimepicker.git"
+    "url": "https://github.com/degroote-benjamin/datetimepicker.git"
   },
   "keywords": [
     "jquery-plugin",
@@ -25,12 +25,12 @@
     "datepicker",
     "timepicker"
   ],
-  "author": "Chupurnov <chupurnov@gmail.com> (https://xdsoft.net/)",
+  "author": "degroote <degroote.benjamin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xdan/datetimepicker/issues"
+    "url": "https://github.com/degroote-benjamin/datetimepicker/issues"
   },
-  "homepage": "https://github.com/xdan/datetimepicker",
+  "homepage": "https://github.com/degroote-benjamin/datetimepicker",
   "dependencies": {
     "jquery": ">= 1.7.2",
     "jquery-mousewheel": ">= 3.1.13",

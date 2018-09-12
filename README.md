@@ -1,4 +1,5 @@
 # jQuery DateTimePicker
+Forsaken package from https://github.com/xdan/datetimepicker
 [Demo and Documentation](https://xdsoft.net/jqplugins/datetimepicker/)
 
 [![Build Status](https://travis-ci.org/xdan/datetimepicker.svg?branch=master)](https://travis-ci.org/xdan/datetimepicker)
@@ -14,13 +15,13 @@ This file will be automatically displayed on the site
 # Installation
 
 ```bash
-npm install jquery-datetimepicker
+npm install degroote-jquery-datetimepicker
 ```
 OR
 ```bash
-yarn add jquery-datetimepicker
+yarn add degroote-jquery-datetimepicker
 ```
-or download [zip](https://github.com/xdan/datetimepicker/releases)
+or download [zip](https://github.com/degroote-benjamin/datetimepicker/releases)
 # datetimepicker
 ==============
 
