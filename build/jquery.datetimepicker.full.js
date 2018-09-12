@@ -904,7 +904,7 @@ var datetimepickerFactory = function ($) {
 				timeboxparent.on('mousewheel', function (event) {
 					var top = Math.abs(parseInt(timebox.css('marginTop'), 10));
 
-					top = top - (event.deltaY * 20);
+					top = top + (event.originalEvent.deltaY * 20);
 					if (top < 0) {
 						top = 0;
 					}
@@ -2044,7 +2044,7 @@ var datetimepickerFactory = function ($) {
 					if (!options.scrollMonth) {
 						return true;
 					}
-					if (event.deltaY < 0) {
+					if (event.originalEvent.deltaY < 0) {
 						_xdsoft_datetime.nextMonth();
 					} else {
 						_xdsoft_datetime.prevMonth();
@@ -2059,8 +2059,8 @@ var datetimepickerFactory = function ($) {
 					}
 					if (!options.datepicker && options.timepicker) {
 						current_time_index = timebox.find('.xdsoft_current').length ? timebox.find('.xdsoft_current').eq(0).index() : 0;
-						if (current_time_index + event.deltaY >= 0 && current_time_index + event.deltaY < timebox.children().length) {
-							current_time_index += event.deltaY;
+						if (current_time_index + event.originalEvent.deltaY >= 0 && current_time_index + event.originalEvent.deltaY < timebox.children().length) {
+							current_time_index += event.originalEvent.deltaY;
 						}
 						if (timebox.children().eq(current_time_index).length) {
 							timebox.children().eq(current_time_index).trigger('mousedown');
@@ -2068,7 +2068,7 @@ var datetimepickerFactory = function ($) {
 						return false;
 					}
 					if (options.datepicker && !options.timepicker) {
-						datepicker.trigger(event, [event.deltaY, event.deltaX, event.deltaY]);
+						datepicker.trigger(event, [event.originalEvent.deltaY, event.originalEvent.deltaX, event.originalEvent.deltaY]);
 						if (input.val) {
 							input.val(_xdsoft_datetime.str());
 						}
@@ -2379,7 +2379,7 @@ var datetimepickerFactory = function ($) {
 						setCaretPos(input[0], 0);
 					}
 
-					input.on('paste.xdsoft', function (event) {
+					input.off('paste.xdsoft').on('paste.xdsoft', function (event) {
 					    // couple options here
 					    // 1. return false - tell them they can't paste
 					    // 2. insert over current characters - minimal validation
@@ -2397,7 +2397,8 @@ var datetimepickerFactory = function ($) {
 					    var valueBeforeCursor = val.substr(0, pos);
 					    var valueAfterPaste = val.substr(pos + pastedData.length);
 
-					    val = valueBeforeCursor + pastedData + valueAfterPaste;           
+					    val = valueBeforeCursor + pastedData + valueAfterPaste;   
+				            val = val.substring(0, options.mask.length)
 					    pos += pastedData.length;
 
 					    if (isValidValue(options.mask, val)) {
